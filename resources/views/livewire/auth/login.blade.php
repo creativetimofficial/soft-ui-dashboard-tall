@@ -21,25 +21,24 @@
                                     <form wire:submit.prevent="login" action="#" method="POST">
 
                                         <label class="mb-2 ml-1 font-bold text-size-xs text-slate-700">Email</label>
-                                        @error('email')
-                                            <p class="">{{ $message }}</p>
-                                        @enderror
                                         <div class="mb-4">
                                             <input wire:model.lazy="email" type="email"
                                                 class="focus:shadow-soft-primary-outline text-size-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow"
                                                 name="email" placeholder="Email" aria-label="Email"
                                                 aria-describedby="email-addon" required autofocus />
                                         </div>
-                                        <label class="mb-2 ml-1 font-bold text-size-xs text-slate-700">Password</label>
-                                        @error('password')
-                                            <p class="">{{ $message }}</p>
+                                        @error('email')
+                                            <p class="text-size-sm text-red-500">{{ $message }}</p>
                                         @enderror
+                                        <label class="mb-2 ml-1 font-bold text-size-xs text-slate-700">Password</label>
                                         <div class="mb-4">
                                             <input wire:model.lazy="password" type="password"
                                                 class="focus:shadow-soft-primary-outline text-size-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow"
                                                 placeholder="Password" name="password" aria-label="Password"
                                                 aria-describedby="password-addon" required />
-
+                                            @error('password')
+                                                <p class="text-size-sm text-red-500">{{ $message }}</p>
+                                            @enderror
                                         </div>
                                         <div class="min-h-6 mb-0.5 block pl-12">
 

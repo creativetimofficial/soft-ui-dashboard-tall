@@ -1,4 +1,3 @@
-<div>
     <main class="mt-0 transition-all duration-200 ease-soft-in-out">
         <section class="min-h-screen mb-32">
             <div class="relative flex items-start pt-12 pb-56 m-4 overflow-hidden bg-center bg-cover min-h-50-screen rounded-xl"
@@ -103,7 +102,7 @@
                                             placeholder="Name" name="name" aria-label="Name"
                                             aria-describedby="email-addon" required autofocus />
                                         @error('name')
-                                            <p>{{ $message }}</p>
+                                            <p class="text-size-sm text-red-500">{{ $message }}</p>
                                         @enderror
                                     </div>
 
@@ -115,7 +114,7 @@
                                             placeholder="Email" name="email" aria-label="Email"
                                             aria-describedby="email-addon" required />
                                         @error('email')
-                                            <p>{{ $message }}</p>
+                                            <p class="text-size-sm text-red-500">{{ $message }}</p>
                                         @enderror
                                     </div>
 
@@ -126,7 +125,7 @@
                                             placeholder="Password" name="password" aria-label="Password"
                                             aria-describedby="password-addon" required />
                                         @error('password')
-                                            <p>{{ $message }}</p>
+                                            <p class="text-size-sm text-red-500">{{ $message }}</p>
                                         @enderror
                                     </div>
 
@@ -157,4 +156,3 @@
             </div>
         </section>
     </main>
-</div>

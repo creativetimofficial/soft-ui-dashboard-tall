@@ -8,6 +8,6 @@ class ForgotPassword extends Component
 {
     public function render()
     {
-        return view('livewire.auth.forgot-password')->layout('layouts.base');
+        return view('livewire.auth.forgot-password');
     }
 }

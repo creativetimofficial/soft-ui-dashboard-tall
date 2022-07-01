@@ -34,7 +34,7 @@
             <script>
               document.write(new Date().getFullYear());
             </script>
-            Soft by <a class="font-semibold" href="https://www.creative-tim.com">Creative Tim</a> & <a class="font-semibold" href="https://updivision.com">UPDIVISION</a>.
+            Soft by <a class="font-semibold text-slate-700" href="https://www.creative-tim.com">Creative Tim</a> & <a class="font-semibold text-slate-700" href="https://updivision.com">UPDIVISION</a>.
           </p>
         </div>
       </div>

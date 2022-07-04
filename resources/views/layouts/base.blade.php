@@ -1,4 +1,5 @@
-{{-- <!DOCTYPE html>
+{{--
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Metas -->
     @if(env('IS_DEMO'))
-        <x-demo-metas></x-demo-metas>
+    <x-demo-metas></x-demo-metas>
     @endif
     <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="../assets/img/favicon.png">
@@ -74,9 +75,9 @@
 <!DOCTYPE html>
 
 @if (\Request::is('rtl'))
-    <html dir="rtl" lang="ar">
+<html dir="rtl" lang="ar">
 @else
-    <html lang="en">
+<html lang="en">
 @endif
 
 <head>
@@ -98,9 +99,9 @@
     <!-- Main Styling -->
     <link href="../assets/css/styles.css?v=1.0.3" rel="stylesheet" />
 
-        <!-- Alpine -->
-        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-        @livewireStyles
+    <!-- Alpine -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    @livewireStyles
 
 </head>
 
@@ -119,7 +120,5 @@
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <!-- main script file  -->
 <script src="../assets/js/soft-ui-dashboard-tailwind.js?v=1.0.3" async></script>
-
-
 
 </html>

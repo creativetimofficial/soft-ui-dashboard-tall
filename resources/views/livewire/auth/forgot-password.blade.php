@@ -1,4 +1,3 @@
-
 <main class="mt-0 transition-all duration-200 ease-soft-in-out">
     <section>
         <div class="relative flex items-center p-0 overflow-hidden bg-center bg-cover min-h-75-screen">
@@ -10,22 +9,24 @@
                             class="relative flex flex-col min-w-0 mt-32 break-words bg-transparent border-0 shadow-none rounded-2xl bg-clip-border">
                             <div class="p-6 pb-0 mb-0 bg-transparent border-b-0 rounded-t-2xl">
                                 <h3 class="relative z-10 font-bold text-transparent bg-gradient-cyan bg-clip-text">
-                                    Recover password</h3>
+                                    Forgot password</h3>
                                 <p class="mb-0">Forgot your password? <br />Enter your email below!</p>
                             </div>
 
                             <div class="flex-auto p-6">
-                                <form method="POST" action="#wip">
-                                    @csrf
+                                <form wire:submit.prevent="recoverPassword" action="#" method="POST">
 
-                                    <label class="mb-2 ml-1 font-bold text-size-xs text-slate-700">Email</label>
+
+                                    <label for="email"
+                                        class="mb-2 ml-1 font-bold text-size-xs text-slate-700">Email</label>
                                     <div class="mb-4">
-                                        <input type="email"
-                                            class="focus:shadow-soft-primary-outline text-size-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow"
+                                        <input wire:model="email" type="email" id="email"
+                                            class="
+                                            focus:shadow-soft-primary-outline text-size-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow"
                                             placeholder="Email" name="email" aria-label="Email"
-                                            aria-describedby="email-addon" :value="old('email')" required autofocus />
+                                            aria-describedby="email-addon" required autofocus />
                                         @error('email')
-                                            <p class="text-size-sm text-red-500">{{ $message }}</p>
+                                        <p class="text-size-sm text-red-500">{{ $message }}</p>
                                         @enderror
                                     </div>
 
@@ -35,6 +36,36 @@
                                             Email Password Reset Link</button>
                                     </div>
                                 </form>
+
+                                <br />
+
+                                @if ($showSuccesNotification)
+
+                                <div wire:model="showSuccesNotification" alert
+                                    class="relative p-4 pr-12 mb-4 text-white border border-solid rounded-lg bg-gradient-dark-gray border-slate-100">
+                                    An email for resetting your password has been sent!
+                                    <button wire:click="$set('showSuccesNotification', false)" type="button" alert-close
+                                        class="box-content absolute top-0 right-0 p-4 text-white bg-transparent border-0 rounded w-4-em h-4-em text-size-sm z-2">
+                                        <span aria-hidden="true" class="text-center cursor-pointer">&#10005;</span>
+                                    </button>
+                                </div>
+                                @endif
+
+                                @if ($showFailureNotification)
+
+                                <div wire:model="showFailureNotification" alert
+                                    class="relative p-4 pr-12 mb-4 text-white border border-solid rounded-lg bg-gradient-dark-gray border-slate-100">
+                                    You do not seem to have an account. You can sign up for an account
+                                    <a href="{{ route('register') }}"
+                                        class="relative z-10 font-semibold text-transparent bg-gradient-cyan bg-clip-text">here</a>.
+                                    <button wire:click="$set('showFailureNotification', false)" type="button"
+                                        alert-close
+                                        class="box-content absolute top-0 right-0 p-4 text-white bg-transparent border-0 rounded w-4-em h-4-em text-size-sm z-2">
+                                        <span aria-hidden="true" class="text-center cursor-pointer">&#10005;</span>
+                                    </button>
+                                </div>
+                                @endif
+
                             </div>
                         </div>
                     </div>

@@ -28,7 +28,7 @@
                                                 aria-describedby="email-addon" required autofocus />
                                         </div>
                                         @error('email')
-                                            <p class="text-size-sm text-red-500">{{ $message }}</p>
+                                        <p class="text-size-sm text-red-500">{{ $message }}</p>
                                         @enderror
                                         <label class="mb-2 ml-1 font-bold text-size-xs text-slate-700">Password</label>
                                         <div class="mb-4">
@@ -37,14 +37,14 @@
                                                 placeholder="Password" name="password" aria-label="Password"
                                                 aria-describedby="password-addon" required />
                                             @error('password')
-                                                <p class="text-size-sm text-red-500">{{ $message }}</p>
+                                            <p class="text-size-sm text-red-500">{{ $message }}</p>
                                             @enderror
                                         </div>
                                         <div class="min-h-6 mb-0.5 block pl-12">
 
                                             <input wire:model="remember_me"
-                                                class="mt-0.54 rounded-10 duration-250 ease-soft-in-out after:rounded-circle after:shadow-soft-2xl after:duration-250 checked:after:translate-x-5.25 h-5-em relative float-left -ml-12 w-10 cursor-pointer appearance-none border border-solid border-gray-200 bg-slate-800/10 bg-none bg-contain bg-left bg-no-repeat align-top transition-all after:absolute after:top-px after:h-4 after:w-4 after:translate-x-px after:bg-white after:content-[''] checked:border-slate-800/95 checked:bg-slate-800/95 checked:bg-none checked:bg-right"type="checkbox"
-                                                id="rememberMe">
+                                                class="mt-0.54 rounded-10 duration-250 ease-soft-in-out after:rounded-circle after:shadow-soft-2xl after:duration-250 checked:after:translate-x-5.25 h-5-em relative float-left -ml-12 w-10 cursor-pointer appearance-none border border-solid border-gray-200 bg-slate-800/10 bg-none bg-contain bg-left bg-no-repeat align-top transition-all after:absolute after:top-px after:h-4 after:w-4 after:translate-x-px after:bg-white after:content-[''] checked:border-slate-800/95 checked:bg-slate-800/95 checked:bg-none checked:bg-right"
+                                                type="checkbox" id="rememberMe">
                                             <label
                                                 class="mb-2 ml-1 font-normal cursor-pointer select-none text-size-sm text-slate-700"
                                                 for="rememberMe">Remember me</label>

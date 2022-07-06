@@ -18,6 +18,19 @@
                                 </div>
 
                                 <div class="flex-auto p-6">
+
+                                    @if (Session::has('status'))
+                                    <div id="alert"
+                                        class="relative p-4 pr-12 mb-4 text-white border border-solid rounded-lg bg-gradient-dark-gray border-slate-100">
+                                        {{ Session::get('status') }}
+                                        <button type="button" onclick="alertClose()"
+                                            class="box-content absolute top-0 right-0 p-2 text-white bg-transparent border-0 rounded w-4-em h-4-em text-size-sm z-2">
+                                            <span aria-hidden="true" class="text-center cursor-pointer">&#10005;</span>
+                                        </button>
+                                    </div>
+    
+                                    @endif
+
                                     <form wire:submit.prevent="login">
 
                                         <label class="mb-2 ml-1 font-bold text-size-xs text-slate-700">Email</label>
@@ -84,4 +97,10 @@
             </div>
         </section>
     </main>
+
+    <script>
+        function alertClose() {
+            document.getElementById("alert").style.display = "none";
+        }
+    </script>
 </div>

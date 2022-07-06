@@ -2,7 +2,7 @@
     <div class="w-full px-6 mx-auto">
         <div class="flex flex-wrap items-center -mx-3 lg:justify-between">
             <div class="w-full max-w-full px-3 mt-0 mb-6 shrink-0 lg:mb-0 lg:w-1/2 lg:flex-none">
-                <div class="leading-normal text-center text-size-sm text-slate-500 lg:text-left">
+                <div class="leading-normal text-center text-size-sm text-slate-500 {{ (Request::is('rtl') ? 'lg:text-right' : 'lg:text-left') }} ">
                     ©
                     <script>
                         document.write(new Date().getFullYear() + ",");
@@ -23,7 +23,7 @@
                             target="_blank">Creative Tim</a>
                     </li>
                     <li class="nav-item">
-                        <a href="https://updivision.comcom"
+                        <a href="https://updivision.com"
                             class="block px-4 pt-0 pb-1 font-normal transition-colors ease-soft-in-out text-size-sm text-slate-500"
                             target="_blank">UPDIVISION</a>
                     </li>
@@ -46,4 +46,4 @@
             </div>
         </div>
     </div>
-</footer>
+</footer>  

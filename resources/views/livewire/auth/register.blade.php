@@ -89,7 +89,7 @@
                         </div>
                         <div class="flex-auto p-6">
 
-                            <form wire:submit.prevent="register" action="#" method="POST" role="form text-left">
+                            <form wire:submit.prevent="register">
 
                                 <div class="mb-4">
                                     <input wire:model.lazy="name" type="text"

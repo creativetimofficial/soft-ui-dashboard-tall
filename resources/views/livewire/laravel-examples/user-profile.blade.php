@@ -16,7 +16,7 @@
                 </div>
                 <div class="flex-none w-auto max-w-full px-3 my-auto">
                     <div class="h-full">
-                        <h5 class="mb-1">Alec Thompson</h5>
+                        <h5 class="mb-1">{{ $user->name; }}</h5>
                         <p class="mb-0 font-semibold leading-normal text-size-sm">CEO / Co-Founder</p>
                     </div>
                 </div>
@@ -136,7 +136,7 @@
                     </div>
                     @endif
 
-                    <form wire:submit.prevent="save" action="#" method="POST">
+                    <form wire:submit.prevent="save">
 
                         <div class="flex flex-wrap -mx-3">
                             <div class="max-w-full px-3 lg:w-1/2 lg:flex-none">
@@ -205,7 +205,7 @@
                         <h6 class="font-bold leading-tight uppercase text-size-xs text-slate-500">About Me</h6>
 
                         <div class="mb-4">
-                            <textarea wire:model.lazy="user.about" wire:click="$set('showSuccesNotification', false)"
+                            <textarea wire:model.lazy="user.about"
                                 rows="4"
                                 class="text-size-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
                                 placeholder="Say something about yourself" id="user-about">

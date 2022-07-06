@@ -18,7 +18,7 @@
                                 </div>
 
                                 <div class="flex-auto p-6">
-                                    <form wire:submit.prevent="login" action="#" method="POST">
+                                    <form wire:submit.prevent="login">
 
                                         <label class="mb-2 ml-1 font-bold text-size-xs text-slate-700">Email</label>
                                         <div class="mb-4">

@@ -15,12 +15,18 @@
                             </div>
 
                             <div class="flex-auto p-6">
-                                <form wire:submit.prevent="resetPassword" action="#" method="POST">
+
+                                @if (Session::has('email'))
+                                    <span>{{ Session::get('email') }}</span>
+                                </div>
+                                @endif
+
+                                <form wire:submit.prevent="resetPassword">
 
                                     <label for="email"
                                         class="mb-2 ml-1 font-bold text-size-xs text-slate-700">Email</label>
                                     <div class="mb-4">
-                                        <input wire:model="email" type="email"
+                                        <input wire:model.lazy="email" type="email"
                                             class="
                                             focus:shadow-soft-primary-outline text-size-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow"
                                             placeholder="Email" aria-label="Email" aria-describedby="email-addon"
@@ -33,7 +39,7 @@
                                     <label for="password"
                                         class="mb-2 ml-1 font-bold text-size-xs text-slate-700">Password</label>
                                     <div class="mb-4">
-                                        <input wire:model="password" type="password" id="password"
+                                        <input wire:model.lazy="password" type="password" id="password"
                                             class="
                                             focus:shadow-soft-primary-outline text-size-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow"
                                             placeholder="New password" aria-label="Password"
@@ -47,7 +53,7 @@
                                         class="mb-2 ml-1 font-bold text-size-xs text-slate-700">Password
                                         confirmation</label>
                                     <div class="mb-4">
-                                        <input wire:model="passwordConfirmation" type="password"
+                                        <input wire:model.lazy="passwordConfirmation" type="password"
                                             id="passwordConfirmation"
                                             class="
                                             focus:shadow-soft-primary-outline text-size-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow"

@@ -1,5 +1,6 @@
 var pageName = page;
-var sidenav_target = to_build + "pages/" + pageName + ".html";
+var origin = window.location.origin
+var sidenav_target = origin + '/' + pageName;
 
 var fixedPlugin = document.querySelector("[fixed-plugin]");
 var fixedPluginButton = document.querySelector("[fixed-plugin-button]");

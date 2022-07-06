@@ -14,13 +14,22 @@
                             </div>
 
                             <div class="flex-auto p-6">
-                                <form wire:submit.prevent="recoverPassword" action="#" method="POST">
+
+                                @if (Session::has('status'))
+                                    <span>{{ Session::get('status') }}</span>
+                                @elseif (Session::has('email'))
+              
+                                    <span>{{ Session::get('email') }}</span>
+
+                                @endif
+
+                                <form wire:submit.prevent="recoverPassword">
 
 
                                     <label for="email"
                                         class="mb-2 ml-1 font-bold text-size-xs text-slate-700">Email</label>
                                     <div class="mb-4">
-                                        <input wire:model="email" type="email" id="email"
+                                        <input wire:model.lazy="email" type="email" id="email"
                                             class="
                                             focus:shadow-soft-primary-outline text-size-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow"
                                             placeholder="Email" name="email" aria-label="Email"

@@ -16,7 +16,7 @@
                 </div>
                 <div class="flex-none w-auto max-w-full px-3 my-auto">
                     <div class="h-full">
-                        <h5 class="mb-1">{{ $user->name; }}</h5>
+                        <h5 class="mb-1">{{ $user->name }}</h5>
                         <p class="mb-0 font-semibold leading-normal text-size-sm">CEO / Co-Founder</p>
                     </div>
                 </div>
@@ -121,19 +121,17 @@
 
                     <h5 class="font-bold py-3">Profile Information</h5>
 
-                    @if ($errors->any())
-                    @php $showSuccesNotification = false; @endphp
-                    @endif
+                    @if (Session::has('status'))
 
-                    @if ($showSuccesNotification)
-                    <div wire:model="showSuccesNotification" alert
+                    <div id="alert"
                         class="relative p-4 pr-12 mb-4 text-white border border-solid rounded-lg bg-gradient-dark-gray border-slate-100">
-                        Your profile information have been successfuly saved!
-                        <button wire:click="$set('showSuccesNotification', false)" type="button" alert-close
-                            class="box-content absolute top-0 right-0 p-4 text-white bg-transparent border-0 rounded w-4-em h-4-em text-size-sm z-2">
+                        {{ Session::get('status') }}
+                        <button type="button" onclick="alertClose()"
+                            class="box-content absolute top-0 right-0 p-2 text-white bg-transparent border-0 rounded w-4-em h-4-em text-size-sm z-2">
                             <span aria-hidden="true" class="text-center cursor-pointer">&#10005;</span>
                         </button>
                     </div>
+
                     @endif
 
                     <form wire:submit.prevent="save">
@@ -195,8 +193,6 @@
 
                                     </div>
 
-
-
                                 </div>
                             </div>
 
@@ -205,17 +201,14 @@
                         <h6 class="font-bold leading-tight uppercase text-size-xs text-slate-500">About Me</h6>
 
                         <div class="mb-4">
-                            <textarea wire:model.lazy="user.about"
-                                rows="4"
+                            <textarea wire:model.lazy="user.about" rows="4"
                                 class="text-size-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
                                 placeholder="Say something about yourself" id="user-about">
                             @error('user.about') <p class="text-size-sm text-red-500">{{ $message }}</p> @enderror
                     </textarea>
 
-
                         </div>
                         <div class="flow-root">
-                            {{-- <p class="float-right">A complete portal for geeks</p> --}}
 
                             <button type="submit"
                                 class="float-right inline-block px-6 py-3 mt-6 mb-2 font-bold text-center text-white uppercase align-middle transition-all bg-transparent border-0 rounded-lg cursor-pointer active:opacity-85 hover:scale-102 hover:shadow-soft-xs leading-pro text-size-xs ease-soft-in tracking-tight-soft shadow-soft-md bg-150 bg-x-25 bg-gradient-dark-gray hover:border-slate-700 hover:bg-slate-700 hover:text-white">
@@ -223,20 +216,18 @@
 
                         </div>
 
-
-
-
                 </div>
 
-
-
-
-
                 </form>
-
 
             </div>
         </div>
     </div>
+
+    <script>
+        function alertClose() {
+            document.getElementById("alert").style.display = "none";
+        }
+    </script>
 
 </div>

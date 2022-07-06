@@ -16,15 +16,28 @@
                             <div class="flex-auto p-6">
 
                                 @if (Session::has('status'))
-                                    <span>{{ Session::get('status') }}</span>
+                                <div id="alert"
+                                    class="relative p-4 pr-12 mb-4 text-white border border-solid rounded-lg bg-gradient-dark-gray border-slate-100">
+                                    {{ Session::get('status') }}
+                                    <button type="button" onclick="alertClose()"
+                                        class="box-content absolute top-0 right-0 p-2 text-white bg-transparent border-0 rounded w-4-em h-4-em text-size-sm z-2">
+                                        <span aria-hidden="true" class="text-center cursor-pointer">&#10005;</span>
+                                    </button>
+                                </div>
                                 @elseif (Session::has('email'))
-              
-                                    <span>{{ Session::get('email') }}</span>
+
+                                <div id="alert"
+                                    class="relative p-4 pr-12 mb-4 text-white border border-solid rounded-lg bg-gradient-dark-gray border-slate-100">
+                                    {{ Session::get('email') }}
+                                    <button type="button" onclick="alertClose()"
+                                        class="box-content absolute top-0 right-0 p-2 text-white bg-transparent border-0 rounded w-4-em h-4-em text-size-sm z-2">
+                                        <span aria-hidden="true" class="text-center cursor-pointer">&#10005;</span>
+                                    </button>
+                                </div>
 
                                 @endif
 
                                 <form wire:submit.prevent="recoverPassword">
-
 
                                     <label for="email"
                                         class="mb-2 ml-1 font-bold text-size-xs text-slate-700">Email</label>
@@ -46,35 +59,6 @@
                                     </div>
                                 </form>
 
-                                <br />
-
-                                @if ($showSuccesNotification)
-
-                                <div wire:model="showSuccesNotification" alert
-                                    class="relative p-4 pr-12 mb-4 text-white border border-solid rounded-lg bg-gradient-dark-gray border-slate-100">
-                                    An email for resetting your password has been sent!
-                                    <button wire:click="$set('showSuccesNotification', false)" type="button" alert-close
-                                        class="box-content absolute top-0 right-0 p-4 text-white bg-transparent border-0 rounded w-4-em h-4-em text-size-sm z-2">
-                                        <span aria-hidden="true" class="text-center cursor-pointer">&#10005;</span>
-                                    </button>
-                                </div>
-                                @endif
-
-                                @if ($showFailureNotification)
-
-                                <div wire:model="showFailureNotification" alert
-                                    class="relative p-4 pr-12 mb-4 text-white border border-solid rounded-lg bg-gradient-dark-gray border-slate-100">
-                                    You do not seem to have an account. You can sign up for an account
-                                    <a href="{{ route('register') }}"
-                                        class="relative z-10 font-semibold text-transparent bg-gradient-cyan bg-clip-text">here</a>.
-                                    <button wire:click="$set('showFailureNotification', false)" type="button"
-                                        alert-close
-                                        class="box-content absolute top-0 right-0 p-4 text-white bg-transparent border-0 rounded w-4-em h-4-em text-size-sm z-2">
-                                        <span aria-hidden="true" class="text-center cursor-pointer">&#10005;</span>
-                                    </button>
-                                </div>
-                                @endif
-
                             </div>
                         </div>
                     </div>
@@ -89,4 +73,10 @@
             </div>
         </div>
     </section>
+    <script>
+        function alertClose() {
+            document.getElementById("alert").style.display = "none";
+        }
+    </script>
+
 </main>

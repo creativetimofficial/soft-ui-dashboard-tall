@@ -40,10 +40,9 @@ class ResetPassword extends Component
             $existingUser->update([
                 'password' => Hash::make($this->password)
             ]);
-            $this->showSuccesNotification = true;
-            $this->showFailureNotification = false;
+            redirect('login')->with('status', 'Your password has been reset!');
         } else {
-            $this->showFailureNotification = true;
+            return back()->with('email', "We could not find any user with that email address.");
         }
     }
 

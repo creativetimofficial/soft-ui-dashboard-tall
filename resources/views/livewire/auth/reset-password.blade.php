@@ -17,8 +17,16 @@
                             <div class="flex-auto p-6">
 
                                 @if (Session::has('email'))
-                                    <span>{{ Session::get('email') }}</span>
+                                <div id="email"
+                                    class="relative p-4 pr-12 mb-4 text-white border border-solid rounded-lg bg-gradient-dark-gray border-slate-100">
+                                    {{ Session::get('email') }}
+                                    <button type="button" onclick="alertClose()"
+                                        class="box-content absolute top-0 right-0 p-2 text-white bg-transparent border-0 rounded w-4-em h-4-em text-size-sm z-2">
+                                        <span aria-hidden="true" class="text-center cursor-pointer">&#10005;</span>
+                                    </button>
                                 </div>
+                                </div>
+
                                 @endif
 
                                 <form wire:submit.prevent="resetPassword">
@@ -71,33 +79,6 @@
                                     </div>
                                 </form>
 
-                                <br />
-
-                                @if ($showSuccesNotification)
-
-                                <div wire:model="showSuccesNotification" alert
-                                    class="relative p-4 pr-12 mb-4 text-white border border-solid rounded-lg bg-gradient-dark-gray border-slate-100">
-                                    Your password has been successfuly changed! You can login now!
-                                    <button wire:click="$set('showSuccesNotification', false)" type="button" alert-close
-                                        class="box-content absolute top-0 right-0 p-4 text-white bg-transparent border-0 rounded w-4-em h-4-em text-size-sm z-2">
-                                        <span aria-hidden="true" class="text-center cursor-pointer">&#10005;</span>
-                                    </button>
-                                </div>
-                                @endif
-
-                                @if ($showFailureNotification)
-
-                                <div wire:model="showFailureNotification" alert
-                                    class="relative p-4 pr-12 mb-4 text-white border border-solid rounded-lg bg-gradient-dark-gray border-slate-100">
-                                    Please enter the correct email address!
-                                    <button wire:click="$set('showFailureNotification', false)" type="button"
-                                        alert-close
-                                        class="box-content absolute top-0 right-0 p-4 text-white bg-transparent border-0 rounded w-4-em h-4-em text-size-sm z-2">
-                                        <span aria-hidden="true" class="text-center cursor-pointer">&#10005;</span>
-                                    </button>
-                                </div>
-                                @endif
-
                             </div>
                         </div>
                     </div>
@@ -112,4 +93,10 @@
             </div>
         </div>
     </section>
+
+    <script>
+        function alertClose() {
+            document.getElementById("alert").style.display = "none";
+        }
+    </script>
 </main>

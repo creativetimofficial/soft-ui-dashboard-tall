@@ -14,9 +14,6 @@ class ForgotPassword extends Component
 
     public $email = '';
 
-    public $showSuccesNotification = false;
-    public $showFailureNotification = false;
-
     protected $rules = [
         'email' => 'required|email',
     ];
@@ -32,10 +29,10 @@ class ForgotPassword extends Component
         $user = User::where('email', $this->email)->first();
         if ($user) {
             $this->notify(new ResetPassword($user->id));
-            $this->showSuccesNotification = true;
-            $this->showFailureNotification = false;
+            return back()->with('status', "An email for resetting your password has been sent!");
+
         } else {
-            $this->showFailureNotification = true;
+            return back()->with('email', "We could not find any user with that email address.");
         }
     }
 

@@ -28,7 +28,7 @@ class UserProfile extends Component
     {
         $this->validate();
         $this->user->save();
-        $this->showSuccesNotification = true;
+        return back()->with('status', "Your profile information have been successfuly saved!");
     }
     public function render()
     {

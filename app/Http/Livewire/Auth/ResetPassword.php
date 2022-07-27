@@ -16,9 +16,6 @@ class ResetPassword extends Component
     public $password = '';
     public $passwordConfirmation = '';
 
-    public $showSuccesNotification = false;
-    public $showFailureNotification = false;
-
     public $urlID = '';
 
     protected $rules = [

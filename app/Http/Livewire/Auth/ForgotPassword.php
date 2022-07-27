@@ -25,14 +25,17 @@ class ForgotPassword extends Component
 
     public function recoverPassword()
     {
-        $this->validate();
-        $user = User::where('email', $this->email)->first();
-        if ($user) {
-            $this->notify(new ResetPassword($user->id));
-            return back()->with('status', "An email for resetting your password has been sent!");
-
+        if (env('IS_DEMO')) {
+            return back()->with('demo', "You are in a demo version, resetting password is disabled.");
         } else {
-            return back()->with('email', "We could not find any user with that email address.");
+            $this->validate();
+            $user = User::where('email', $this->email)->first();
+            if ($user) {
+                $this->notify(new ResetPassword($user->id));
+                return back()->with('status', "An email for resetting your password has been sent!");
+            } else {
+                return back()->with('email', "We could not find any user with that email address.");
+            }
         }
     }
 

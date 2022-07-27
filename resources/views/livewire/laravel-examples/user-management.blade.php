@@ -1,10 +1,28 @@
 <div class="flex flex-wrap -mx-3">
+
+    <div class="flex-auto p-2 pb-0">
+        <div alert
+            class="relative p-4 pr-12 mb-4 text-white border border-red-300 border-solid rounded-lg bg-gradient-red">
+            <span class="font-bold">Add, Edit, Delete features are not functional!</span> This is a <span
+                class="font-bold">PRO</span> feature! Click <a href="https://www.creative-tim.com"
+                class="font-bold text-white">here</a> to see the <span class="font-bold">PRO</span> product!
+        </div>
+    </div>
+
     <div class="flex-none w-full max-w-full px-3">
         <div
             class="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 border-transparent border-solid shadow-soft-xl rounded-2xl bg-clip-border">
             <div class="p-6 pb-0 mb-0 bg-white border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
-                <h6>Authors table</h6>
+                <h6>All users</h6>
+                <p>Here you can manage users.</p>
             </div>
+
+            <div class="my-auto ml-auto pr-6">
+                <button type="button"
+                        class="inline-block px-8 py-2 m-0 text-xs font-bold text-center text-white uppercase align-middle transition-all border-0 rounded-lg cursor-pointer ease-soft-in leading-pro tracking-tight-soft bg-gradient-fuchsia shadow-soft-md bg-150 bg-x-25 hover:scale-102 active:opacity-85">+&nbsp;
+                        Add User</button>
+            </div>
+
             <div class="flex-auto px-0 pt-0 pb-2">
                 <div class="p-0 overflow-x-auto">
                     <table class="items-center w-full mb-0 align-top border-gray-200 text-slate-500">

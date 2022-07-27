@@ -37,6 +37,17 @@
 
                                 @endif
 
+                                @if (Session::has('demo'))
+                                <div id="alert"
+                                    class="relative p-4 pr-12 mb-4 text-white border border-solid rounded-lg bg-gradient-red border-slate-100">
+                                    {{ Session::get('demo') }}
+                                    <button type="button" onclick="alertClose()"
+                                        class="box-content absolute top-0 right-0 p-2 text-white bg-transparent border-0 rounded w-4-em h-4-em text-size-sm z-2">
+                                        <span aria-hidden="true" class="text-center cursor-pointer">&#10005;</span>
+                                    </button>
+                                </div>
+                                @endif
+
                                 <form wire:submit.prevent="recoverPassword">
 
                                     <label for="email"

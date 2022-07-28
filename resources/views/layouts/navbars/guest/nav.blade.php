@@ -81,7 +81,7 @@
               </li> -->
                 <ul class="hidden pl-0 mb-0 list-none lg:block lg:flex-row">
                     <li>
-                        <a href="https://www.creative-tim.com/product/soft-ui-dashboard-tailwind" target="_blank"
+                        <a href="https://www.creative-tim.com/product/soft-ui-dashboard-tall" target="_blank"
                             class="leading-pro hover:scale-102 hover:shadow-soft-xs active:opacity-85 ease-soft-in text-size-xs tracking-tight-soft shadow-soft-md bg-150 bg-x-25 rounded-3.5xl mb-0 mr-1 inline-block cursor-pointer border-0 bg-transparent px-8 py-2 text-center align-middle font-bold uppercase transition-all
                             {{ Request::is('static-sign-up') || Request::is('register') ? 'text-slate-800 bg-gradient-gray' : 'text-white bg-gradient-dark-gray' }}">
                             Free download</a>

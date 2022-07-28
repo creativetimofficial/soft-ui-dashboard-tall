@@ -404,7 +404,7 @@
       </div>
       <!-- pro btn  -->
       <a class="inline-block w-full px-6 py-3 my-4 font-bold text-center text-white uppercase align-middle transition-all ease-in border-0 rounded-lg select-none shadow-soft-md bg-150 bg-x-25 leading-pro text-size-xs bg-gradient-fuchsia hover:shadow-soft-2xl hover:scale-102"
-        href="https://www.creative-tim.com/">Upgrade to pro</a>
+        href="https://www.creative-tim.com/product/soft-ui-dashboard-pro-tall">Upgrade to pro</a>
     </div>
   </aside>
 

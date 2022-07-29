@@ -36,7 +36,7 @@ Speed up your web development with the Tailwind Admin Dashboard built for Larave
 If you don't already have an Apache local environment with PHP and MySQL, use one of the following links:
 
  - Windows: https://updivision.com/blog/post/beginner-s-guide-to-setting-up-your-local-development-environment-on-windows
- - Linux: https://upcloud.com/resources/tutorials/installing-lamp-stack-ubuntu
+ - Linux: https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-20-04
  - Mac: https://wpshout.com/quick-guides/how-to-install-mamp-on-your-mac/
 
 Also, you will need to install Composer: https://getcomposer.org/doc/00-intro.md   
@@ -73,11 +73,11 @@ Besides the dashboard, the auth pages, the billing and table pages, there is als
 ## Demo
 | Register | Login | Dashboard |
 | --- | --- | ---  |
-| [<img src="screenshots/register.png" width="322" height="200" />](https://soft-ui-dashboard-tall.creative-tim.com/register) | [<img src="screenshots/login.png" width="322" height="200" />](https://soft-ui-dashboard-tall.creative-tim.com/login)  | [<img src="screenshots/dashboard.png" width="322" height="200" />](https://soft-ui-dashboard-tall.creative-tim.com/dashboard)
+| [<img src="screenshots/register.png" width="322" />](https://soft-ui-dashboard-tall.creative-tim.com/register) | [<img src="screenshots/login.png" width="322" />](https://soft-ui-dashboard-tall.creative-tim.com/login)  | [<img src="screenshots/dashboard.png" width="322" />](https://soft-ui-dashboard-tall.creative-tim.com/dashboard)
 
 | Forgot Password Page | Reset Password Page | Profile Page  |
 | --- | --- | ---  |
-| [<img src="screenshots/forgot-password.png" width="322" height="200" />](https://soft-ui-dashboard-tall.creative-tim.com/login/forgot-password)  | [<img src="screenshots/reset-password.png" width="322" height="200" />](https://soft-ui-dashboard-tall.creative-tim.com/login) | [<img src="screenshots/user-profile.png" width="322" height="200" />](https://soft-ui-dashboard-tall.creative-tim.com/user-profile)
+| [<img src="screenshots/forgot-password.png" width="322" />](https://soft-ui-dashboard-tall.creative-tim.com/login/forgot-password)  | [<img src="screenshots/reset-password.png" width="322" />](https://soft-ui-dashboard-tall.creative-tim.com/login) | [<img src="screenshots/user-profile.png" width="322" />](https://soft-ui-dashboard-tall.creative-tim.com/user-profile)
 [View More](https://soft-ui-dashboard-tall.creative-tim.com/dashboard)
 
 ## Documentation
@@ -131,17 +131,13 @@ The `App/Http/Livewire/Auth/ForgotPassword.php` takes care of sending an email t
 ```
     public function recoverPassword()
     {
-        if (env('IS_DEMO')) {
-            return back()->with('demo', "You are in a demo version, resetting password is disabled.");
+        $this->validate();
+        $user = User::where('email', $this->email)->first();
+        if ($user) {
+            $this->notify(new ResetPassword($user->id));
+            return back()->with('status', "An email for resetting your password has been sent!");
         } else {
-            $this->validate();
-            $user = User::where('email', $this->email)->first();
-            if ($user) {
-                $this->notify(new ResetPassword($user->id));
-                return back()->with('status', "An email for resetting your password has been sent!");
-            } else {
-                return back()->with('email', "We could not find any user with that email address.");
-            }
+            return back()->with('email', "We could not find any user with that email address.");
         }
     }
 ```
@@ -177,20 +173,10 @@ The `App/Http/Livewire/LaravelExamples/UserProfile.php` handles the user's profi
     {
         $this->validate();
 
-        if (env('IS_DEMO') && auth()->user()->id == 1) {
-            if (auth()->user()->email == $this->user->email) {
-                $this->user->save();
-                return back()->with('status', "Your profile information have been successfuly saved!");
-            }
-
-            return back()->with('demo', "You are in a demo version. You are not allowed to change the email for default users.");
-        }
-
         $this->user->save();
 
         return back()->with('status', "Your profile information have been successfully saved!");
     }
-}
 ```
 
 ### Dashboard

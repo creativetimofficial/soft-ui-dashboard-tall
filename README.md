@@ -6,7 +6,7 @@
 [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/soft-ui-dashboard-tall.svg)](https://github.com/creativetimofficial/soft-ui-dashboard-tall/issues?q=is%3Aissue+is%3Aclosed)
 
 *Frontend version*: Soft UI Dashboard Tailwind v1.0.3. More info at https://www.creative-tim.com/product/soft-ui-dashboard-tailwind
-[ <img src="https://s3.amazonaws.com/creativetim_bucket/products/642/original/soft-ui-dashboard-tailwind.jpg?raw=true" width="100%" />](https://demos.creative-tim.com/soft-ui-dashboard-tailwind/pages/dashboard.html)
+[ <img src="https://s3.amazonaws.com/creativetim_bucket/products/683/original/soft-ui-dashboard-tall.jpg?raw=true" width="100%" />](https://demos.creative-tim.com/soft-ui-dashboard-tailwind/pages/dashboard.html)
 
 Speed up your web development with the Tailwind Admin Dashboard built for Laravel Framework 9.x and up.
 
@@ -65,9 +65,9 @@ Besides the dashboard, the auth pages, the billing and table pages, there is als
 [<img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/laravel-logo.png" width="60" height="60" title="Laravel" />](https://www.creative-tim.com/product/soft-ui-dashboard-laravel)
 
 
-| HTML Tailwind | Laravel |
-| --- | --- |
-| [![HTML Tailwind](https://s3.amazonaws.com/creativetim_bucket/products/642/thumb/soft-ui-dashboard-tailwind.jpg?raw=true)](https://www.creative-tim.com/product/soft-ui-dashboard-tailwind) | [![Laravel](https://s3.amazonaws.com/creativetim_bucket/products/602/thumb/soft-ui-dashboard-laravel.jpg?1647531884?raw=true)](https://www.creative-tim.com/product/soft-ui-dashboard-laravel)  |
+| HTML Tailwind | Laravel | TALL Stack |
+| --- | --- | --- |
+| [![HTML Tailwind](https://s3.amazonaws.com/creativetim_bucket/products/642/thumb/soft-ui-dashboard-tailwind.jpg?raw=true)](https://www.creative-tim.com/product/soft-ui-dashboard-tailwind) | [![Laravel](https://s3.amazonaws.com/creativetim_bucket/products/602/thumb/soft-ui-dashboard-laravel.jpg?1647531884?raw=true)](https://www.creative-tim.com/product/soft-ui-dashboard-laravel)  | [![Laravel](https://s3.amazonaws.com/creativetim_bucket/products/683/thumb/soft-ui-dashboard-tall.jpg?1647531884?raw=true)](https://www.creative-tim.com/product/soft-ui-dashboard-tall)  |
 
 
 ## Demo

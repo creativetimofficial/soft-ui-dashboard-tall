@@ -6,7 +6,7 @@
 [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/soft-ui-dashboard-tall.svg)](https://github.com/creativetimofficial/soft-ui-dashboard-tall/issues?q=is%3Aissue+is%3Aclosed)
 
 *Frontend version*: Soft UI Dashboard Tailwind v1.0.3. More info at https://www.creative-tim.com/product/soft-ui-dashboard-tailwind
-[ <img src="https://s3.amazonaws.com/creativetim_bucket/products/683/original/soft-ui-dashboard-tall.jpg?raw=true" width="100%" />](https://demos.creative-tim.com/soft-ui-dashboard-tailwind/pages/dashboard.html)
+[ <img src="https://s3.amazonaws.com/creativetim_bucket/products/683/original/soft-ui-dashboard-tall.jpg?raw=true" width="100%" />](https://soft-ui-dashboard-tall.creative-tim.com/)
 
 Speed up your web development with the Tailwind Admin Dashboard built for Laravel Framework 9.x and up.
 

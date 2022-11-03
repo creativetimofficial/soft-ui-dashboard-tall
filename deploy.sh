@@ -17,6 +17,6 @@ php8.1 artisan storage:link
 chown -R www-data:www-data /usr/share/nginx/html/soft_ui_dashboard_tall_free/ #change here too project repository
 php8.1 artisan up
 source ~/.nvm/nvm.sh
+nvm use 16
 npm install
-# npm run prod
 echo "Deploy script finished execution"

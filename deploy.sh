@@ -18,5 +18,5 @@ chown -R www-data:www-data /usr/share/nginx/html/soft_ui_dashboard_tall_free/ #c
 php8.1 artisan up
 source ~/.nvm/nvm.sh
 npm install
-npm run prod
+# npm run prod
 echo "Deploy script finished execution"

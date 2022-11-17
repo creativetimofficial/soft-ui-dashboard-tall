@@ -10,6 +10,8 @@
 
 Speed up your web development with the Tailwind Admin Dashboard built for Laravel Framework 9.x and up.
 
+If you want to get more features, go PRO with [Soft UI Dashboard PRO Tall](https://soft-ui-dashboard-pro-tall.creative-tim.com).
+
 ## Table of Contents
 * [Prerequisites](#prerequisites)
 * [Installation](#installation)

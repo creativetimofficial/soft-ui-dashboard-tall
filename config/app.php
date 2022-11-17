@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Facade;
 
 return [
 
+    'hour' => env('SCHEDULED_HOUR', ''),
+    'min' => env('SCHEDULED_MIN', ''),
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -16,7 +19,6 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
-    'scheduled' => env('SCHEDULED_TIME', 15),
 
     /*
     |--------------------------------------------------------------------------

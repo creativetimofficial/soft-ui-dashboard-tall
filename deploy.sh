@@ -19,4 +19,5 @@ php8.1 artisan up
 source ~/.nvm/nvm.sh
 nvm use 16
 npm install
+npm run build
 echo "Deploy script finished execution"

@@ -8,3 +8,7 @@ All notable changes to `Soft UI Dashboard TALL` will be documented in this file.
 - Register
 - Forgot password
 - Profile edit
+
+## [1.0.1]
+### Added
+- Tailwind CSS

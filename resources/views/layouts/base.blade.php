@@ -50,8 +50,9 @@
     <!-- Main Styling -->
     <link href="{{ asset('assets') }}/css/styles.css?v=1.0.3" rel="stylesheet" />
 
-    @livewireStyles
+    @vite('resources/css/app.css')
 
+    @livewireStyles
 </head>
 
 <body class="m-0 font-sans antialiased font-normal text-size-base leading-default bg-gray-50 text-slate-500">

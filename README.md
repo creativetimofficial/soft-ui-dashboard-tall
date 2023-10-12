@@ -38,11 +38,10 @@ If you want to get more features, go PRO with [Soft UI Dashboard PRO Tall](https
 If you don't already have an Apache local environment with PHP and MySQL, use one of the following links:
 
  - Windows: https://updivision.com/blog/post/beginner-s-guide-to-setting-up-your-local-development-environment-on-windows
- - Linux: https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-20-04
- - Mac: https://wpshout.com/quick-guides/how-to-install-mamp-on-your-mac/
+ - Linux & Mac: https://updivision.com/blog/post/guide-what-is-lamp-and-how-to-install-it-on-ubuntu-and-macos
 
 Also, you will need to install Composer: https://getcomposer.org/doc/00-intro.md   
-And Laravel: https://laravel.com/docs/9.x/installation
+And Laravel: https://laravel.com/docs/10.x
 
 
 ## Installation
